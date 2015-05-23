@@ -21,4 +21,3 @@ A minimal project and associated test files are provided as follows:
 2. <code>demo_tests.c</code> - The first test suite containing a simple set of tests to exercise the project code. You would replace the tests in here with ones that exercise your own project code.
 3. <code>more_tests.c</code> - A second test suite essentially duplicating the first and intended to show how you can group related tests together into suites. The harness will then run all the suites in sequence.
 
-VIo5b477DQbqLJXQxvXr
