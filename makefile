@@ -5,11 +5,8 @@ all: $(suites)
 	cc -o more_tests more_tests.o
 	sh ./test_harness.sh
 
-demo_tests.o: demo_tests.c test_framework.h debug.h
-	cc -c demo_tests.c
+$(suites): project_code.h test_framework.h debug.h
 
-more_tests.o: more_tests.c test_framework.h debug.h
-	cc -c more_tests.c
-
+.PHONY: clean
 clean:
-	rm demo_tests more_tests $(suites)
+	-rm demo_tests more_tests $(suites)
