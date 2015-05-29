@@ -16,7 +16,7 @@ int num_failures;
 
 #define tf_run_suite(name) \
 int main(int argc, char *argv[]) {\
-	check(argc == 1, "Pass zero arguments"); \
+	assrt(argc == 1, "Pass zero arguments"); \
 	dbg("Running test suite %s", argv[0]);\
 	printf("Runningtest suite %s\n", argv[0]);\
 	name();\
