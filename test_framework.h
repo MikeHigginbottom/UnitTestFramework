@@ -18,7 +18,7 @@ int num_failures;
 int main(int argc, char *argv[]) {\
 	assrt(argc == 1, "Pass zero arguments"); \
 	dbg("Running test suite %s", argv[0]);\
-	printf("Runningtest suite %s\n", argv[0]);\
+	printf("Running test suite %s\n", argv[0]);\
 	name();\
 	printf("Ran %d tests\n", num_tests_run);\
 	if (num_failures) {\
