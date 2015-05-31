@@ -5,7 +5,7 @@ for suite in *_tests
 do
 	if [ -f $suite ]
 	then
-		if $VALGRIND ./$suite 2>> $log_file
+		if valgrind -q --leak-check=full --track-origins=yes ./$suite 2>> $log_file
 		then
 			echo "Test suite" $suite "passed\n"
 		else
@@ -14,5 +14,5 @@ do
 	fi
 done
 echo "Dump of" $log_file "follows:"
-tail $log_file
-echo""
+cat $log_file
+echo ""
