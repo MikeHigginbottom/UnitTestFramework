@@ -1,5 +1,5 @@
 log_file=results.log
-rm $log_file
+rm -f $log_file
 echo""
 for suite in *_tests
 do
@@ -14,5 +14,5 @@ do
 	fi
 done
 echo "Dump of" $log_file "follows:"
-cat $log_file
+more $log_file
 echo ""
