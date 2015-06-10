@@ -12,7 +12,11 @@ int num_failures;
 
 #define tf_run_test(test) dbg("Running test case %s", #test); result = test(); num_tests_run++; if (result) { num_failures++; }
 
-#define tf_assert(test, message) if (!(test)) { err(message); return -1; } else { return 0; }
+#define tf_assert(test, message, ...) if (!(test)) { err(message, ##__VA_ARGS__); return -1; }
+
+#define tf_stub() { err("Ran stubbed out test case"); return -1; }
+
+#define tf_passed() dbg("Test case passed"); return 0;
 
 #define tf_run_suite(name) \
 int main(int argc, char *argv[]) {\
