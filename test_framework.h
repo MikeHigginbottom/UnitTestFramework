@@ -14,6 +14,10 @@ int num_failures;
 
 #define tf_assert(test, message, ...) if (!(test)) { err(message, ##__VA_ARGS__); return -1; }
 
+#define tf_clear_errmsg() *errmsg = '\0';
+#define tf_assert_no_errors() if (*errmsg != '\0') { err("Expected no error messages and got '%s'", errmsg); return -1; }
+#define tf_assert_errmsg(expected) if (strcmp(errmsg, expected) != 0) { err("Expected error message '%s' and got '%s'", expected, errmsg); return -1; }
+
 #define tf_stub() { err("Ran stubbed out test case"); return -1; }
 
 #define tf_passed() dbg("Test case passed"); return 0;
